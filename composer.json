@@ -1,0 +1,26 @@
+{
+    "name": "helium/aliyun-sts",
+    "description": "AliYun OSS STS for laravel/lumen5+",
+    "keywords": ["sts", "oss", "laravel", "lumen", "aliyun"],
+    "authors": [
+        {
+            "name": "helium",
+            "email": "18200172438@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Helium\\Sts\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Helium\\Sts\\AliYunSTSServiceProvider"
+            ]
+        }
+    }
+}
