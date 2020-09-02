@@ -1,0 +1,29 @@
+{
+  "name": "bmsLaravel/aliyun-sts",
+  "description": "AliYun STS laravel/Lumen5+",
+  "keywords": ["sts", "aliyun", "oss", "laravel", "lumen"],
+  "homepage": "https://github.com/bmslaravel/aliyun-sts",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "bmsLaravel",
+      "email": "18200172438@163.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "LDL\\Aliyun\\Sts\\": "src",
+      "Sts\\": "src/Sts"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LDL\\Aliyun\\Sts\\Provider\\AliyunStsServiceProvider"
+      ]
+    }
+  }
+}
