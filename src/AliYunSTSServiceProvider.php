@@ -21,8 +21,8 @@ class AliYunSTSServiceProvider extends ServiceProvider
     {
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([
-                './config/pay.php' => config_path('pay.php'), ],
-                'laravel-pay'
+                dirname(__DIR__).'/src/config/sts.php' => config_path('sts.php'), ],
+                'config'
             );
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('sts');
