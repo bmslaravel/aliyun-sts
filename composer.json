@@ -1,5 +1,5 @@
 {
-    "name": "helium/aliyun-sts",
+    "name": "bmslaravel/aliyun-sts",
     "description": "AliYun OSS STS for laravel/lumen5+",
     "keywords": ["sts", "oss", "laravel", "lumen", "aliyun"],
     "authors": [
