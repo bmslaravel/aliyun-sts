@@ -14,9 +14,9 @@ class Sts
 
     /**
      * Sts constructor.
-     * @param Repository $config
+     * @param array $config
      */
-    public function __construct(Repository $config)
+    public function __construct(array $config)
     {
         $this->config = $config;
     }
@@ -33,8 +33,21 @@ class Sts
         $request = new AssumeRoleRequest();
         $request->setRoleSessionName('client_name');
         $request->setRoleArn($this->config['role_arn']);
-        $request->setPolicy($this->config['policy']);
+        $request->setPolicy(json_encode($this->config['policy'], JSON_UNESCAPED_UNICODE));
         $request->setDurationSeconds($this->config['token_expire_time']);
-        return $client->doAction($request);
+        $response = $client->doAction($request);
+
+        $body = $response->getBody();
+        $content = json_decode($body);
+        if ($response->getStatus() == 200) {
+            return [
+                'access_key_id'       => $content->Credentials->AccessKeyId,
+                'access_key_secret'   => $content->Credentials->AccessKeySecret,
+                'expiration'          => $content->Credentials->Expiration,
+                'security_token'      => $content->Credentials->SecurityToken,
+            ];
+        } else {
+            throw new \Exception($response->getBody(),$response->getStatus());
+        }
     }
 }

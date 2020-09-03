@@ -36,7 +36,7 @@ class AliYunSTSServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom('./config/sts.php', 'sts');
+        $this->mergeConfigFrom(dirname(__DIR__).'/src/config/sts.php', 'sts');
 
         $this->app->singleton('aliyun.sts', function ($app){
             return new Sts($app['config']['sts']);

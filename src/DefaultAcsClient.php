@@ -19,10 +19,10 @@
  */
 namespace Helium\Sts;
 
-use Sts\Core\Exception\ClientException;
-use Sts\Core\Exception\ServerException;
-use Sts\Core\Regions\EndpointProvider;
-use Sts\Core\Http\HttpHelper;
+use Helium\Sts\Exception\ClientException;
+use Helium\Sts\Exception\ServerException;
+use Helium\Sts\Regions\EndpointProvider;
+use Helium\Sts\Http\HttpHelper;
 
 class DefaultAcsClient implements IAcsClient
 {

@@ -20,6 +20,7 @@ return [
     | From AliYun management platform, The parameter must
     |
     */
+    
     'access_key_secret' => env('ACCESS_KEY_SECRET', ''),
 
     /*
@@ -30,27 +31,8 @@ return [
     | From AliYun management platform, The parameter must
     |
     */
+
     'role_arn'          => env('ROLE_ARN', ''),
-
-    /*
-    |--------------------------------------------------------------------------
-    | AliYun BUCKET NAME
-    |--------------------------------------------------------------------------
-    |
-    | From AliYun management platform, The parameter must
-    |
-    */
-    'bucket_name'       => env('BUCKET_NAME', ''),
-
-    /*
-    |--------------------------------------------------------------------------
-    | AliYun ENDPOINT
-    |--------------------------------------------------------------------------
-    |
-    | From AliYun management platform, The parameter must
-    |
-    */
-    'endpoint'          => env('ENDPOINT', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +42,7 @@ return [
     | From AliYun management platform, The parameter must default 900s
     |
     */
+
     'token_expire_time' => env('TOKEN_EXPIRE_TIME', 900),
 
     /*
@@ -70,6 +53,7 @@ return [
     | From AliYun management platform, The parameter must
     |
     */
+
     'policy'    => [
         "Statement" => [
             [
