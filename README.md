@@ -32,3 +32,7 @@
     // or
     app('aliyun.sts')->token();
 ```
+
+##### Reference link
+https://help.aliyun.com/document_detail/64041.html?spm=a2c4g.11186623.2.17.38165bd44oA7Q2#concept-64041-z
+https://help.aliyun.com/document_detail/32069.html?spm=a2c4g.11186623.6.989.26a459662WQfhJ
