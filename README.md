@@ -3,7 +3,7 @@
 ##### Composer
 `composer require bmslaravel/aliyun-sts`
 
-##### Lravel/Lumen Service Register
+##### Laravel/Lumen Service Register
 * Laravel => config/app.php
     * `Helium\Sts\AliYunSTSServiceProvider::class`
 * Lumen => bootstrap/app.php
@@ -29,4 +29,6 @@
     $response = Helium\Sts\Facades\AliYunSTS::token();
     // or 
     $response = (new Helium\Sts\Sts($app['sts']))->token();
+    // or
+    app('aliyun.sts')->token();
 ```
