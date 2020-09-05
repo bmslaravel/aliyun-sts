@@ -4,6 +4,9 @@ namespace Helium\Sts\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method array|\Exception token()
+ */
 class AliYunSTS extends Facade
 {
     /**
