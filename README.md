@@ -15,6 +15,7 @@
 * lumen => bootstrap/app.php
     * ```php 
         $app->withFacades(true, [
+            // ...
             Helium\Sts\Facades\AliYunSTS::class => 'AliYunSTS',
         ]);
        ```
@@ -25,12 +26,20 @@
 
 ##### Demo
 ```php
-    // eg. 1
-    $response = Helium\Sts\Facades\AliYunSTS::token();
-    // or 
-    $response = (new Helium\Sts\Sts($app['sts']))->token();
-    // or
-    app('aliyun.sts')->token();
+    try{
+        $response = Helium\Sts\Facades\AliYunSTS::token();
+        dd($response);
+        // or
+        $config = config('sts');
+        $response = (new Helium\Sts\Sts($config))->token();
+        dd($response);
+        // or
+        $response = app('aliyun.sts')->token();
+        dd($response);
+    } catch (\Exception $exception) {
+        dd($exception);
+    }
+    
 ```
 
 ##### Reference link
