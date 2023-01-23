@@ -46,6 +46,7 @@ abstract class RpcAcsRequest extends AcsRequest
         $apiParams["SignatureNonce"] = uniqid();
         date_default_timezone_set("GMT");
         $apiParams["Timestamp"] = date($this->dateTimeFormat);
+		date_default_timezone_set("PRC"); // Laravel框架使用了LaravelS扩展包时，在常驻内存环境下，写入数据库会变成UTC时间 所以这里得变回来
         $apiParams["Action"] = $this->getActionName();
         $apiParams["Version"] = $this->getVersion();
         $apiParams["Signature"] = $this->computeSignature($apiParams, $credential->getAccessSecret(), $iSigner);
